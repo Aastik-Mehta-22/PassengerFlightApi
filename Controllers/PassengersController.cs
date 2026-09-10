@@ -77,4 +77,20 @@ public class PassengersController : ControllerBase
 
         return Ok(passenger);
     }
+
+    [HttpDelete("{id}")]
+    public IActionResult DeletePassenger(int id)
+    {
+        var passenger = Passengers.FirstOrDefault(x => x.Id == id);
+
+        if (passenger is null)
+        {
+            return NotFound();
+        }
+
+        Passengers.Remove(passenger);
+
+        return NoContent();
+    }
+
 }

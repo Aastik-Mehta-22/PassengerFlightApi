@@ -46,4 +46,17 @@ public class PassengersController : ControllerBase
 
         return Ok(passenger);
     }
+
+    [HttpPost]
+    public ActionResult<Passenger> CreatePassenger(Passenger passenger)
+    {
+        passenger.Id = Passengers.Count + 1;
+
+        Passengers.Add(passenger);
+
+        return CreatedAtAction(
+            nameof(GetPassenger),
+            new { id = passenger.Id },
+            passenger);
+    }
 }

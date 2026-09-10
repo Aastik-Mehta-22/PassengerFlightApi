@@ -59,4 +59,22 @@ public class PassengersController : ControllerBase
             new { id = passenger.Id },
             passenger);
     }
+
+    [HttpPut("{id}")]
+    public ActionResult<Passenger> UpdatePassenger(int id, Passenger updatedPassenger)
+    {
+        var passenger = Passengers.FirstOrDefault(p => p.Id == id);
+
+        if (passenger is null)
+        {
+            return NotFound();
+        }
+
+        passenger.FirstName = updatedPassenger.FirstName;
+        passenger.LastName = updatedPassenger.LastName;
+        passenger.Email = updatedPassenger.Email;
+        passenger.PassportNumber = updatedPassenger.PassportNumber;
+
+        return Ok(passenger);
+    }
 }

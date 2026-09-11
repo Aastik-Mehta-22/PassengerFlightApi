@@ -10,4 +10,12 @@
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.12" />
   </ItemGroup>
 
+  <ItemGroup>
+  <Compile Remove="PassengerFlightDesktop\**" />
+  <Content Remove="PassengerFlightDesktop\**" />
+  <EmbeddedResource Remove="PassengerFlightDesktop\**" />
+  <None Remove="PassengerFlightDesktop\**" />
+  <Page Remove="PassengerFlightDesktop\**" />
+  </ItemGroup>
+
 </Project>

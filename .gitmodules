@@ -1,0 +1,3 @@
+[submodule "PassengerFlightDesktop"]
+	path = PassengerFlightDesktop
+	url = https://github.com/Aastik-Mehta-22/PassengerFlightDesktop.git
